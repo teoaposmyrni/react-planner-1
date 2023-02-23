@@ -1,4 +1,4 @@
-import Viewer2D from './map2d';
+import Map2D from './map2d';
 import State from './state';
 
 export {

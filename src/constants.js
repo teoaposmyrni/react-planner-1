@@ -224,6 +224,7 @@ export const VERTEX_ACTIONS = {
 
 //MODES
 export const MODE_IDLE = 'MODE_IDLE';
+export const MODE_MAP2D = 'MODE_MAP2D';
 export const MODE_2D_ZOOM_IN = 'MODE_2D_ZOOM_IN';
 export const MODE_2D_ZOOM_OUT = 'MODE_2D_ZOOM_OUT';
 export const MODE_2D_PAN = 'MODE_2D_PAN';

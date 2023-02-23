@@ -11,7 +11,8 @@ import {
   MODE_3D_VIEW,
   MODE_3D_FIRST_PERSON,
   MODE_VIEWING_CATALOG,
-  MODE_CONFIGURING_PROJECT
+  MODE_CONFIGURING_PROJECT,
+  MODE_MAP2D
 } from '../../constants';
 import * as SharedStyle from '../../shared-style';
 
@@ -24,7 +25,9 @@ const iconTextStyle = {
 };
 
 const Icon2D = ( {style} ) => <p style={{...iconTextStyle, ...style}}>2D</p>;
+const IconMap2D = ( {style} ) => <p style={{...iconTextStyle, ...style}}>MAP</p>;
 const Icon3D = ( {style} ) => <p style={{...iconTextStyle, ...style}}>3D</p>;
+
 
 const ASIDE_STYLE = {
   backgroundColor: SharedStyle.PRIMARY_COLOR.main,
@@ -120,6 +123,14 @@ export default class Toolbar extends Component {
           tooltip={translator.t('2D View')}
           onClick={event => projectActions.setMode( MODE_IDLE )}>
           {[MODE_3D_FIRST_PERSON, MODE_3D_VIEW].includes(mode) ? <Icon2D style={{color: alterateColor}} /> : <FaMousePointer style={{color: alterateColor}} />}
+        </ToolbarButton>
+      },
+      {
+        index: 9, condition: true, dom: <ToolbarButton
+          active={[MODE_MAP2D].includes(mode)}
+          tooltip={translator.t('2D Map')}
+          onClick={event => projectActions.setMode( MODE_MAP2D )}>
+          {[MODE_3D_FIRST_PERSON, MODE_3D_VIEW, MODE_IDLE].includes(mode) ? <IconMap2D style={{color: alterateColor}} /> : <FaMousePointer style={{color: alterateColor}} />}
         </ToolbarButton>
       },
       {
